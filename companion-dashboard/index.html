@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#160d24"><meta name="description" content="Local settings dashboard for YouTube Highlights and Ambient Lights.">
+  <title>YouTube Glow · Universal Dashboard</title><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="YouTube Glow home"><span class="brand-icon">✦</span><span><b>YouTube Glow</b><small>HIGHLIGHTS & AMBIENT LIGHTS</small></span></a>
+      <button class="icon-button" id="open-settings" aria-label="Open settings" title="Settings">⚙</button>
+    </header>
+    <main>
+      <section class="hero" id="home">
+        <div class="eyebrow"><span class="pulse"></span> UNIVERSAL EDITION · V2.0</div>
+        <h1>Your video space.<br><span>your rules.</span></h1>
+        <p class="lead">A purple-first control center for your YouTube Glow preferences, built for desktop, Android, and iPhone.</p>
+        <div class="hero-actions"><button class="primary" id="jump-settings">Customize settings <span>→</span></button><button class="secondary" id="export-settings">Export settings ↗</button></div>
+        <div class="notice"><span>ⓘ</span><p>This dashboard stores preferences on this device. It does not control the official YouTube app or automatically sync with browser extensions.</p></div>
+      </section>
+      <section class="section" aria-labelledby="quick-title"><div class="section-heading"><div><p class="eyebrow">QUICK CONTROLS</p><h2 id="quick-title">Your setup</h2></div><span class="local-pill"><i></i> Saved locally</span></div>
+        <div class="control-grid">
+          <article class="control-card"><div class="card-icon">✧</div><div class="card-copy"><b>Ambient lights</b><small>Video glow preference</small></div><label class="switch"><input type="checkbox" data-setting="lights"><span></span></label></article>
+          <article class="control-card"><div class="card-icon">◐</div><div class="card-copy"><b>Focus mode</b><small>Reduce page distractions</small></div><label class="switch"><input type="checkbox" data-setting="focus"><span></span></label></article>
+          <article class="control-card"><div class="card-icon">⊘</div><div class="card-copy"><b>Hide ad UI</b><small>Hide visible ad containers where supported</small></div><label class="switch"><input type="checkbox" data-setting="hideAdUi"><span></span></label></article>
+          <article class="control-card"><div class="card-icon">▤</div><div class="card-copy"><b>Compact panel</b><small>Use a smaller control panel</small></div><label class="switch"><input type="checkbox" data-setting="compact"><span></span></label></article>
+        </div>
+      </section>
+      <section class="section settings-section" id="settings" aria-labelledby="settings-title"><div class="section-heading"><div><p class="eyebrow">PERSONALIZATION</p><h2 id="settings-title">Settings</h2></div><button class="text-button" id="reset-settings">Reset all</button></div>
+        <div class="settings-card">
+          <div class="setting-row"><div><b>Accent color</b><small>Choose your Glow identity</small></div><select id="theme"><option value="purple">Purple (default)</option><option value="blue">Blue</option><option value="pink">Pink</option><option value="green">Green</option><option value="orange">Orange</option></select></div>
+          <div class="setting-row range-row"><div><b>Glow intensity</b><small>Preferred ambient glow strength</small></div><div class="range-control"><input type="range" min="0" max="100" id="intensity"><output id="intensity-value">65%</output></div></div>
+          <div class="setting-row"><div><b>Custom taskbar</b><small>Show the taskbar in supported extensions</small></div><label class="switch"><input type="checkbox" data-setting="showTaskbar"><span></span></label></div>
+          <div class="setting-row"><div><b>YouTube left-nav tools</b><small>Show custom tools in supported desktop layouts</small></div><label class="switch"><input type="checkbox" data-setting="showNav"><span></span></label></div>
+          <div class="setting-row"><div><b>Video action buttons</b><small>Show controls below the player where supported</small></div><label class="switch"><input type="checkbox" data-setting="showPlayerTools"><span></span></label></div>
+        </div>
+      </section>
+      <section class="section" aria-labelledby="preview-title"><div class="section-heading"><div><p class="eyebrow">DESIGN PREVIEW</p><h2 id="preview-title">Your Glow theme</h2></div><span class="preview-label">Preview only</span></div>
+        <div class="preview-card"><div class="preview-screen"><div class="fake-player"><div class="play-icon">▶</div><div class="fake-progress"><i></i></div></div><div class="preview-toolbar"><span class="mini-brand">✦ GLOW</span><button data-preview="lights">✧ Lights</button><button data-preview="focus">◐ Focus</button><button data-preview="back">−10s</button><button data-preview="play">▶ / ❚❚</button><button data-preview="forward">+10s</button></div></div><p id="preview-note">These sample controls only demonstrate the look and feel. They do not operate YouTube from this dashboard.</p></div>
+      </section>
+      <section class="section" aria-labelledby="devices-title"><div class="section-heading"><div><p class="eyebrow">PLATFORM GUIDE</p><h2 id="devices-title">Made for your devices</h2></div></div>
+        <div class="device-list"><article class="device-card"><span class="device-icon">▣</span><div><b>PC browser extension</b><p>Full overlay, taskbar, keyboard shortcuts, focus mode and playback controls on supported YouTube pages.</p><span class="status-chip live">Extension target</span></div></article><article class="device-card"><span class="device-icon">▯</span><div><b>Android browser</b><p>Responsive dashboard works on mobile. The page overlay requires a compatible extension-capable browser and a tested mobile build.</p><span class="status-chip beta">Browser-dependent</span></div></article><article class="device-card"><span class="device-icon">▯</span><div><b>iPhone / iPad</b><p>Use this dashboard in Safari or add it to the Home Screen. A Safari extension would be a separate Apple-platform project.</p><span class="status-chip beta">Dashboard ready</span></div></article></div>
+      </section>
+      <section class="section import-section"><div class="section-heading"><div><p class="eyebrow">PORTABLE PREFERENCES</p><h2>Move settings manually</h2></div></div><div class="import-card"><p>Because settings stay local by default, export a JSON file on one device and import it on another. This does not connect the dashboard to the extension automatically.</p><div class="import-actions"><button class="secondary" id="import-settings">Import JSON</button><input type="file" id="import-file" accept="application/json,.json" hidden><span id="import-status" role="status"></span></div></div></section>
+    </main>
+    <footer><span class="footer-mark">✦</span><div><b>YouTube Glow v2.0</b><small>Private preferences · No account · No analytics</small></div><a href="README.txt">Setup help</a></footer>
+    <nav class="mobile-nav" aria-label="Main navigation"><a class="active" href="#home"><span>⌂</span>Home</a><a href="#settings"><span>⚙</span>Settings</a><a href="#devices-title"><span>▣</span>Devices</a></nav>
+  </div>
+  <script src="../shared/settings-schema.js"></script><script src="app.js"></script>
+</body></html>

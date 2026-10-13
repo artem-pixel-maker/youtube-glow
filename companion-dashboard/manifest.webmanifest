@@ -1,0 +1,17 @@
+{
+  "name": "YouTube Glow - Highlights and Ambient Lights",
+  "short_name": "YouTube Glow",
+  "description": "Local preferences dashboard for YouTube Glow.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#100b18",
+  "theme_color": "#160d24",
+  "icons": [
+    {
+      "src": "./icons/glow.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

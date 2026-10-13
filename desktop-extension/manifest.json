@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Highlights and Ambient Lights",
+  "version": "2.0.0",
+  "description": "YouTube Glow v2.0: customizable taskbar, ambient lights, focus mode, settings, and playback tools.",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://m.youtube.com/*"
+  ],
+  "action": {
+    "default_title": "YouTube Glow",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://m.youtube.com/*"
+      ],
+      "js": [
+        "settings-schema.js",
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
